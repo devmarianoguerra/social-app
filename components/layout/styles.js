@@ -28,7 +28,7 @@ export default css`
     box-shadow: 0 10px 25px #bfbfbf;
     border-radius: 5px;
     width: 100%;
-    height: 100%;
+    height: 85vh;
   }
 
   @media (min-width: ${breakpoints.mobile}) {

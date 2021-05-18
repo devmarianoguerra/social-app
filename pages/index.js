@@ -5,6 +5,7 @@ import Layout from "../components/layout/index";
 import { colors } from "../styles/theme";
 import Button from "../components/button/index";
 import { gitHubLogin, onAuthChange } from "../firebase/client";
+import Avatar from "../components/avatar/index";
 
 export default function Home() {
   const [user, setUser] = useState(null);
@@ -37,6 +38,7 @@ export default function Home() {
 
       <Layout className={styles.main}>
         <section>
+          <h1>Dev App</h1>
           <img src="/curly_bracket.png" alt="logo" />
           <h3>Dev network for devs</h3>
           <div>
@@ -44,8 +46,7 @@ export default function Home() {
               <Button onClick={handleClick}>Login with Github</Button>
             ) : (
               <div>
-                <img src={user.userAvatar} alt="" />
-                <p>{`Bienvenido ${user.userName}`}</p>
+                <Avatar img={user.userAvatar} text={user.userName} />
               </div>
             )}
           </div>
@@ -66,8 +67,12 @@ export default function Home() {
             width: 10%;
           }
 
-          h3 {
+          h1 {
             color: ${colors.primary};
+          }
+
+          h3 {
+            color: ${colors.secondary};
           }
         `}
       </style>
